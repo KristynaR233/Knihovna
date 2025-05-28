@@ -1,0 +1,14 @@
+C:\Users\mikul\Desktop\csharp2\Knihovna\bin\Debug\net8.0\Knihovna.exe
+C:\Users\mikul\Desktop\csharp2\Knihovna\bin\Debug\net8.0\Knihovna.deps.json
+C:\Users\mikul\Desktop\csharp2\Knihovna\bin\Debug\net8.0\Knihovna.runtimeconfig.json
+C:\Users\mikul\Desktop\csharp2\Knihovna\bin\Debug\net8.0\Knihovna.dll
+C:\Users\mikul\Desktop\csharp2\Knihovna\bin\Debug\net8.0\Knihovna.pdb
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\Knihovna.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\Knihovna.AssemblyInfoInputs.cache
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\Knihovna.AssemblyInfo.cs
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\Knihovna.csproj.CoreCompileInputs.cache
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\Knihovna.dll
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\refint\Knihovna.dll
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\Knihovna.pdb
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\Knihovna.genruntimeconfig.cache
+C:\Users\mikul\Desktop\csharp2\Knihovna\obj\Debug\net8.0\ref\Knihovna.dll
