@@ -56,7 +56,7 @@ class Program
             {
                 Console.WriteLine("1 - ulozit novou knihu");
                 Console.WriteLine("2 - vypsat knihy podle data vydani");
-                Console.WriteLine("3 - vypsat datum a pocet udalosti");
+                Console.WriteLine("3 - vypsat počet knih od autora");
                 Console.WriteLine("4 - vypsat knihy podle prumerneho poctu stran");
                 Console.WriteLine("5 - vypsat knihy podle klicoveho slova");
                 Console.WriteLine("6 - ukoncit aplikaci");
