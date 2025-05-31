@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Knihovna")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eda9b9575d45725b3ab4e34dff83cca0ea4bc476")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3d7792b52e88bea8e0d87e203cc00f839b24330")]
 [assembly: System.Reflection.AssemblyProductAttribute("Knihovna")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Knihovna")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

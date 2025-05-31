@@ -1,4 +1,6 @@
 ﻿using System.Dynamic;
+using System.Reflection;
+using System.Text;
 
 namespace Knihovna;
 
@@ -7,7 +9,13 @@ class Program
 {
     public class Book
     {
-        public string Title { get; set; }
+        public Book(string title, DateTime publishedDate) 
+        {
+            this.Title = title;
+    this.PublishedDate = publishedDate;
+   
+        }
+                public string Title { get; set; }
         public string Author { get; set; }
 
         public DateTime PublishedDate { get; set; }
@@ -23,6 +31,9 @@ class Program
             int month = int.Parse(poleDat[1]);
             int day = int.Parse(poleDat[2]);
             PublishedDate = new DateTime(year, month, day);
+
+
+
         }
 
 
@@ -34,7 +45,7 @@ class Program
 
         public void Stats()
         {
-
+            
         }
 
         public static string NactiKnihuOdUzivatele()
@@ -43,26 +54,28 @@ class Program
             string vstupUzivatele = Console.ReadLine();
             return vstupUzivatele;
         }
-
+        
+        
+        
 
         static void Main(string[] args)
         {
-
             Book prvniKniha = new Book("1984", "George Orwell", "1949-06-08", "328");
             Book druhaKniha = new Book("Brave New World", "Aldous Huxley", "1932-01-01", "311");
             Book tretiKniha = new Book ("Animal Farm", "George Orwell", "1945-08-17","112");
             Book ctvrtaKniha = new Book("The Light Fantastic", "Terry Pratchett", "1986-02-15", "271");
-            List<Book> bookList = new List<Book>() {prvniKniha, druhaKniha, tretiKniha, ctvrtaKniha };
+            List<Book> bookList = new List<Book>( ) {prvniKniha, druhaKniha, tretiKniha, ctvrtaKniha };
+            
+            
 
 
             while (true)
             {
                 Console.WriteLine("1 - ulozit novou knihu");
                 Console.WriteLine("2 - vypsat knihy podle data vydani");
-                Console.WriteLine("3 - vypsat počet knih od autora");
-                Console.WriteLine("4 - vypsat knihy podle prumerneho poctu stran");
-                Console.WriteLine("5 - vypsat knihy podle klicoveho slova");
-                Console.WriteLine("6 - ukoncit aplikaci");
+                Console.WriteLine("3 - vypsat průměrný počet stran a počet knih podle autora");
+                Console.WriteLine("4 - vypsat knihy podle klicoveho slova");
+                Console.WriteLine("5- ukoncit aplikaci");
                 Console.WriteLine("Uzivateli, zvol akci:");
                 int akce = int.Parse(Console.ReadLine());
 
@@ -86,14 +99,15 @@ class Program
                         }
                         break;
                     case 3:
+                        var booksPages = bookList.Where(b => b.Pages > 0).Select(b => b.Pages);
+                        double averagePages = booksPages.Average();
+                        Console.WriteLine($"Prumerny pocet stran: {averagePages}");
 
                         break;
                     case 4:
                         break;
                     case 5:
-                        break;
-                    case 6:
-                        Console.WriteLine("Ukoncuji apikaci");
+                        Console.WriteLine("Ukoncuji apikaci.");
                         return;
 
 
