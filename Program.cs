@@ -48,8 +48,11 @@ class Program
         static void Main(string[] args)
         {
 
-
-            List<Book> bookList = new List<Book>() { };
+            Book prvniKniha = new Book("1984", "George Orwell", "1949-06-08", "328");
+            Book druhaKniha = new Book("Brave New World", "Aldous Huxley", "1932-01-01", "311");
+            Book tretiKniha = new Book ("Animal Farm", "George Orwell", "1945-08-17","112");
+            Book ctvrtaKniha = new Book("The Light Fantastic", "Terry Pratchett", "1986-02-15", "271");
+            List<Book> bookList = new List<Book>() {prvniKniha, druhaKniha, tretiKniha, ctvrtaKniha };
 
 
             while (true)
