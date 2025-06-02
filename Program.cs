@@ -2,6 +2,8 @@
 using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
+using Microsoft.VisualBasic;
+using System.Linq;
 
 namespace Knihovna;
 
@@ -105,9 +107,15 @@ class Program
                                 Console.WriteLine($"{jmenaAutoru}: {numberOfBooksByAuthor}");
 
                             }
-                   
                         break;
                     case 4:
+                        Console.WriteLine("Zadej klicove slovo z nazvu knihy:");
+                        string hledaneSlovo = Console.ReadLine();
+
+                        Console.WriteLine(bookList.Where(k => k.Title.Contains(hledaneSlovo)).Select(k => k.Title));
+                        
+                       
+
                         break;
                     case 5:
                         Console.WriteLine("Ukoncuji apikaci.");
