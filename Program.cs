@@ -66,17 +66,17 @@ class Program
 
             while (true)
             {
-                Console.WriteLine("1 - ulozit novou knihu");
-                Console.WriteLine("2 - vypsat knihy podle data vydani");
-                Console.WriteLine("3 - vypsat průměrný počet stran a počet knih podle autora");
-                Console.WriteLine("4 - vypsat knihy podle klicoveho slova");
-                Console.WriteLine("5- ukoncit aplikaci");
+                Console.WriteLine("ADD [ulozit novou knihu]");
+                Console.WriteLine("LIST [vypsat knihy podle data vydani]");
+                Console.WriteLine("STATS [vypsat průměrný počet stran a počet knih podle autora]");
+                Console.WriteLine("FIND [vypsat knihy podle klicoveho slova]");
+                Console.WriteLine("END [ukoncit aplikaci]");
                 Console.WriteLine("Uzivateli, zvol akci:");
-                int akce = int.Parse(Console.ReadLine());
+                string akce = Console.ReadLine().ToUpper();
 
                 switch (akce)
                 {
-                    case 1:
+                    case "ADD":
                         string[] poleVstupu = NactiKnihuOdUzivatele().Split(";");
                         string title = poleVstupu[1];
                         string author = poleVstupu[2];
@@ -86,14 +86,14 @@ class Program
                         bookList.Add(newBook);
                         break;
 
-                    case 2:
+                    case "LIST" :
                         List<Book> booksByDate = bookList.OrderByDescending(book => book.PublishedDate).ToList();
                         foreach (Book book in booksByDate)
                         {
                             book.List();
                         }
                         break;
-                    case 3:
+                    case "STATS":
                         var booksPages = bookList.Where(b => b.Pages > 0).Select(b => b.Pages);
                         double averagePages = booksPages.Average();
                         Console.WriteLine($"Prumerny pocet stran: {averagePages}");
@@ -108,7 +108,7 @@ class Program
 
                             }
                         break;
-                    case 4:
+                    case "FIND":
                         Console.WriteLine("Zadej klicove slovo z nazvu knihy:");
                         string hledaneSlovo = Console.ReadLine();
 
@@ -117,7 +117,7 @@ class Program
                        
 
                         break;
-                    case 5:
+                    case "END":
                         Console.WriteLine("Ukoncuji apikaci.");
                         return;
 
