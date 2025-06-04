@@ -4,6 +4,9 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using Microsoft.VisualBasic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.ComponentModel.Design;
+using System.Collections.Immutable;
 
 namespace Knihovna;
 
@@ -13,7 +16,7 @@ class Program
 
         public static string NactiKnihuOdUzivatele()
         {
-            Console.WriteLine("Zadej nazev knihy, autora, datum vydani a pocet stran ve formátu: ADD; nazev; autor; datum vydani ve formatu [yyyy-mm-dd];pocet stran");
+            Console.WriteLine(" ADD; [nazev]; [autor]; [datum vydani ve formatu yyyy-mm-dd];[pocet stran]");
             string vstupUzivatele = Console.ReadLine();
             return vstupUzivatele;
         }
@@ -79,8 +82,15 @@ class Program
                         Console.WriteLine("Zadej klicove slovo z nazvu knihy:");
                         string hledaneSlovo = Console.ReadLine();
 
-                        Console.WriteLine(bookList.Where(k => k.Title.Contains(hledaneSlovo)).Select(k => k.Title));
-                        
+
+                    var dotaz = from h in bookList.Where(k => k.Title.ToLower().Contains(hledaneSlovo.ToLower()))select h.Title;
+                   foreach (var h in dotaz)
+                    {
+                        Console.WriteLine(h);
+                    }
+                   
+
+                    
                        
 
                         break;
