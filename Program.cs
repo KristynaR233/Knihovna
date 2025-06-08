@@ -45,12 +45,12 @@ class Program
             Console.WriteLine("ADD [ulozit novou knihu]");
             Console.WriteLine("LIST [vypsat knihy podle data vydani]");
             Console.WriteLine("STATS [vypsat průměrný počet stran a počet knih podle autora]");
-            Console.WriteLine("FIND [vypsat knihy podle klicoveho slova]");
+            Console.WriteLine("FIND [vypsat knihy podle klicoveho slova] - zadej find; slovo z titulu");
             Console.WriteLine("END [ukoncit aplikaci]");
             Console.WriteLine("Uzivateli, zvol akci:");
-            string akce = Console.ReadLine().ToUpper();
+            string [] poleAkce = Console.ReadLine().ToUpper().Split(";");
 
-            switch (akce)
+            switch (poleAkce[0])
             {
                 case "ADD":
                     try
@@ -72,7 +72,7 @@ class Program
                     {
                         Console.WriteLine("Nova kniha neni zadana spravne. Zadejte ji ve správném formátu: ADD; nazev; autor; datum vydani ve formatu yyyy-mm-dd; pocet stran");
                         string[] poleVstupu = Console.ReadLine().Split(";");
-                        return;
+                       
                     }
 
                     break;
@@ -100,10 +100,7 @@ class Program
                     }
                     break;
                 case "FIND":
-                    Console.WriteLine("Zadej klicove slovo z nazvu knihy:");
-                    string hledaneSlovo = Console.ReadLine();
-
-
+                    string hledaneSlovo = poleAkce[1];
                     var dotaz = from h in bookList.Where(k => k.Title.ToLower().Contains(hledaneSlovo.ToLower())) select h.Title;
                     foreach (var h in dotaz)
                     {
