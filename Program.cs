@@ -62,17 +62,17 @@ class Program
                         string pages = poleVstupu[4];
                         var newBook = new Book(title, author, publishedDate, pages);
                         bookList.Add(newBook);
-
                     }
-                    catch (FormatException)
+                    catch (Exception ex)
                     {
-                        Console.WriteLine("Datum musi byt zadano ve formatu: YYYY-MM-DD");
+                        Console.WriteLine("Nastala chyba + ex.Message.");
                     }
+
                     catch
                     {
                         Console.WriteLine("Nova kniha neni zadana spravne. Zadejte ji ve správném formátu: ADD; nazev; autor; datum vydani ve formatu yyyy-mm-dd; pocet stran");
                         string[] poleVstupu = Console.ReadLine().Split(";");
-                       
+
                     }
 
                     break;
