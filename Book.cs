@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
@@ -24,18 +25,15 @@ public class Book
         {
             throw new Exception("Pocet stran musi byt kladne cislo.");
         }
-
-        string[] poleDat = publishedDate.Split("-");
-        int year = int.Parse(poleDat[0]);
-        int month = int.Parse(poleDat[1]);
-        int day = int.Parse(poleDat[2]);
-        PublishedDate = new DateTime(year, month, day);
-        
-        if (DateTime.TryParse(publishedDate, out DateTime result))
+        try
         {
-            result = PublishedDate;
+            string[] poleDat = publishedDate.Split("-");
+            int year = int.Parse(poleDat[0]);
+            int month = int.Parse(poleDat[1]);
+            int day = int.Parse(poleDat[2]);
+            PublishedDate = new DateTime(year, month, day);
         }
-        else
+        catch (Exception ex)
         {
             Console.WriteLine("Neni zadane datum v platném formatu");
         }
