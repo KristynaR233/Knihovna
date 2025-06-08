@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace Knihovna;
@@ -19,24 +20,35 @@ public class Book
         Title = title;
         Author = author;
         Pages = int.Parse(pages);
+        if (Pages < 0)
+        {
+            throw new Exception("Pocet stran musi byt kladne cislo.");
+        }
+
         string[] poleDat = publishedDate.Split("-");
         int year = int.Parse(poleDat[0]);
         int month = int.Parse(poleDat[1]);
         int day = int.Parse(poleDat[2]);
         PublishedDate = new DateTime(year, month, day);
+        
+        if (DateTime.TryParse(publishedDate, out DateTime result))
+        {
+            result = PublishedDate;
+        }
+        else
+        {
+            Console.WriteLine("Neni zadane datum v platném formatu");
+        }
+        ;
 
     }
-        
-        public void List()
-        {   
 
-            Console.WriteLine($"Kniha:{Title}, autor: {Author}, vydáno {PublishedDate.Date}, stran: {Pages}");
-        }
+    public void List()
+    {
 
-        public void Stats()
-        {
-            
-        }
+        Console.WriteLine($"Kniha:{Title}, autor: {Author}, vydáno {PublishedDate.Date}, stran: {Pages}");
+    }
+
 
 
 }
