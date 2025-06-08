@@ -101,7 +101,7 @@ class Program
                     break;
                 case "FIND":
                     string hledaneSlovo = poleAkce[1];
-                    var dotaz = from h in bookList.Where(k => k.Title.ToLower().Contains(hledaneSlovo.ToLower())) select h.Title;
+                    var dotaz = from h in bookList.Where(k => k.Title.ToLower().Contains(hledaneSlovo.ToLower().Trim())) select h.Title;
                     foreach (var h in dotaz)
                     {
                         Console.WriteLine(h);
